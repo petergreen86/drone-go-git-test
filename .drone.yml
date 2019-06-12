@@ -22,3 +22,8 @@ steps:
       - go build -o output
       - chmod +x output
       - ./output
+  - name: hub
+    commands:
+      - wget https://blackducksoftware.github.io/hub-detect/hub-detect.sh
+      - chmod +x hub-detect.sh
+      - ./hub-detect.sh --blackduck.hub.url=((hub_url)) --blackduck.hub.username=((hub_username)) --blackduck.hub.password=((hub_password))
